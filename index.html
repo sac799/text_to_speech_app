@@ -4,16 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="anim.css">
+
     <title>Text to Speech App</title>
 </head>
 <body>
+
     <div id="container">
         <h1>Text to Speech</h1>
         <textarea id="textToSpeak" rows="4" placeholder="Enter text to speak"></textarea>
-        <button id="speakButton">Speak</button>
+        <button id="speakButton" class="animate-on-click">Speak</button>
         <p id="output"></p>
     </div>
-    <script src="script.js"></script>
+
+
+    <div class="robot">
+        <div class="neck"></div>
+        <div class="arms">
+            <div class="arm arm_left"></div>
+            <div class="arm arm_right"></div>
+        </div>
+        <div class="torso"></div>
+        <div class="head">
+            <div class="eyes">
+                <div class="eyeball eyeball_left"></div>
+                <div class="eyeball eyeball_right"></div>
+            </div>
+            <div class="mouth">
+                <div class="mouth-container">
+                    <div class="mouth-container-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+        <defs>
+            <!-- Speaking -->
+            <filter >
+                <feTurbulence id="turbulence"
+                              baseFrequency="0.02"
+                              numOctaves="3"
+                              result="noise"
+                              seed="0"/>
+                <feDisplacementMap id="displacement"
+                                   in="SourceGraphic"
+                                   in2="noise"
+                                   scale="12" />
+            </filter>
+            <filter id="speaking-1">
+                <feTurbulence id="turbulence"
+                              baseFrequency="0.02"
+                              numOctaves="3"
+                              result="noise"
+                              seed="30"/>
+                <feDisplacementMap in="SourceGraphic"
+                                   in2="noise"
+                                   scale="13" />
+            </filter>
+            <filter id="speaking-2">
+                <feTurbulence id="turbulence"
+                              baseFrequency="0.02"
+                              numOctaves="3"
+                              result="noise"
+                              seed="2"/>
+                <feDisplacementMap in="SourceGraphic"
+                                   in2="noise"
+                                   scale="12" />
+            </filter>
+            <filter id="speaking-3">
+                <feTurbulence id="turbulence"
+                              baseFrequency="0.02"
+                              numOctaves="3"
+                              result="noise"
+                              seed="30"/>
+                <feDisplacementMap in="SourceGraphic"
+                                   in2="noise"
+                                   scale="13" />
+            </filter>
+            <filter id="speaking-4">
+                <feTurbulence id="turbulence"
+                              baseFrequency="0.1"
+                              numOctaves="3"
+                              result="noise"
+                              seed="4"/>
+                <feDisplacementMap in="SourceGraphic"
+                                   in2="noise"
+                                   scale="11" />
+            </filter>
+        </defs>
+    </svg>
+ 
+    <script src="script.js"></script>    
+
 </body>
 </html>

@@ -2,6 +2,8 @@ const textToSpeak = document.getElementById("textToSpeak");
 const speakButton = document.getElementById("speakButton");
 const output = document.getElementById("output");
 const synth = window.speechSynthesis;
+const box = document.getElementById("animated-box");
+const animateButton = document.getElementById("animate-button");
 
 speakButton.addEventListener("click", () => {
     const text = textToSpeak.value;
@@ -13,3 +15,4 @@ speakButton.addEventListener("click", () => {
         output.innerText = "Speech Complete";
     };
 });
+
