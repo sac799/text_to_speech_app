@@ -2,7 +2,6 @@
     display: none;
 }
 
-
 #welcome-screen {
     background-color: #333;
     color: #fff;
@@ -52,10 +51,9 @@
     }
   }
 
-  /* Styles for the "Continue" button */
 .custom-button {
-    background-color: #007BFF; /* Button background color */
-    color: #fff; /* Button text color */
+    background-color: #007BFF; 
+    color: #fff; 
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -66,6 +64,6 @@
   }
   
   .custom-button:hover {
-    background-color: #0056b3; /* Button background color on hover */
+    background-color: #0056b3; 
   }
   
