@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="anim.css"> -->
     <link rel="stylesheet" href="welcome.css">
     <link rel="stylesheet" href="robo.css">
+
     <title>Text to Speech App</title>
 </head>
+
 <body>
-    <div class="container">
-        <div id="welcome-screen">
-            <h2>We don't save your data</h2>
-            <div class="animation-container">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-            </div>
-            <button id="continue-button" class="custom-button">Continue</button>
+    <div id="background-container"></div> <!-- This div will hold the Giphy animation -->
+
+    <div id="welcome-screen">
+        <h2>We don't save your data</h2>
+        <div class="animation-container">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
         </div>
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-                const welcomeScreen = document.getElementById("welcome-screen");
-                const mainScreen = document.getElementById("container");
-                const continueButton = document.getElementById("continue-button");
-                continueButton.addEventListener("click", function() {
+        <button id="continue-button" class="custom-button">Continue</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const welcomeScreen = document.getElementById("welcome-screen");
+            const mainScreen = document.getElementById("container");
+            const continueButton = document.getElementById("continue-button");
+            continueButton.addEventListener("click", function () {
                 welcomeScreen.style.display = "none";
                 mainScreen.style.display = "block";
             });
         });    
-        </script>
-        <div id="container">
-            <h1>Text to Speech</h1>
-            <textarea id="textToSpeak" rows="8" cols="29" placeholder="Enter text to speak" style="border: 2px solid #ccc;"></textarea>
-            <button id="speakButton" class="animate-on-click">Speak</button>
-            <p id="output"></p>
-        </div>    
+    </script>
+    <div id="container">
+        <h1>Text to Speech</h1>
+        <textarea id="textToSpeak" rows="6" cols="30" placeholder="Enter text to speak"
+            style="border: 2px solid #ccc;"></textarea>
+        <button id="speakButton" class="animate-on-click">Speak</button>
+        <p id="output"></p>
     </div>
-    <script src="script.js"></script>    
+    <script src="script.js"></script>
+
 </body>
+
 </html>

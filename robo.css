@@ -1,36 +1,12 @@
-/* ROBOT.GIF from Giphy - https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY */
-
-/* ROBOT.GIF from Giphy - https://giphy.com/gifs/beer-robot-jonasbodtker-1ZDDyAaAA82ywDiyKs */
-
-html {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    background: white;
-  }
-  
-  .container {
-    height: 60vh;
-    width: 60vw;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    background: url('https://media.giphy.com/media/oMg7wBHYhS3p5ER9y6/giphy.gif');
-    background-size: contain;
-    background-position: left center;
-    background-repeat: no-repeat;
-  }
-  
-  /* Media Query for Tablet or smaller */
-  
-  @media screen and (max-width: 1000px){
-    .container {
-      background-size: cover;
-      background-position: center center;
-    }
-    button {
-      box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5);
-    }
-  }
+#background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://media.giphy.com/media/oMg7wBHYhS3p5ER9y6/giphy.gif"); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+  animation: robotAnimation 5s infinite linear;
+}
